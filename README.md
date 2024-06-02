@@ -1,6 +1,7 @@
 <div align="center">
   <br />
-      <img src="" alt="Project Banner">
+      <img src="https://github.com/Kaleab-Selamawi/video-chat/blob/main/public/thumbnail.png?raw=true" alt="Project Banner">
+  <br />
   <br />
 
   <div>
@@ -17,7 +18,7 @@ This repository contains the source code for a simple video chat application dev
 
  
  
-### 🚀 [video-chat.vercel.appn](video-chat.vercel.app)
+### 🚀 [video-chat-nine-ashy.vercel.app](https://video-chat-nine-ashy.vercel.app)
 ## Features
 
 - 🎥👥 **Video Chat Rooms**: Users can create and join video chat rooms by entering a room name.
