@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <br />
+      <img src="" alt="Project Banner">
+  <br />
 
-## Getting Started
+  <div>
+    <img src="https://img.shields.io/badge/-Typescript-black?style=for-the-badge&logoColor=white&logo=typescript&color=3178C6" alt="typescript" />
+    <img src="https://img.shields.io/badge/-React-black?style=for-the-badge&logoColor=white&logo=react&color=000000" alt="react" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
+    <img src="https://img.shields.io/badge/-Jitsi-black?style=for-the-badge&logoColor=white&logo=jitsi&color=412991" alt="openai" />
+ </div>
+  </div>
+  
+# Simple Video Chat Application
 
-First, run the development server:
+This repository contains the source code for a simple video chat application developed using React for the frontend, NodeJS for the backend, and Jitsi as the video conferencing service.
+
+ 
+ 
+### 🚀 [video-chat.vercel.appn](video-chat.vercel.app)
+## Features
+
+- 🎥👥 **Video Chat Rooms**: Users can create and join video chat rooms by entering a room name.
+
+- 📹 **Participant Video Streams**: Display video streams of all participants in the video chat room.
+
+- ⚛️ **Functional Components**: Utilize React functional components and hooks for efficient development.
+
+- 🎨 **Clear UI Design**: Implement a basic UI with clear and intuitive design for a seamless user experience.
+
+- 🚀 **NodeJS Server**: Set up a NodeJS server using Express to serve the React application. 
+
+- 🌐 **API Endpoints**: Implement necessary API endpoints to support room management and interactions.
+
+- 📞 **Jitsi Integration**: Integrate Jitsi Meet API to handle video conferencing functionalities.
+
+- 🔒 **User Authentication (Bonus)**: Optionally implement user authentication for added security.
+
+- 💬 **Chat Functionality (Bonus)**: Add chat functionality within the video chat room for communication.
+
+- 📝 **TypeScript Usage (Bonus)**: Use TypeScript for both the frontend and backend for type safety.
+
+- 📄 **Documentation**: Provide clear instructions on setting up and running the application.
+
+- 🌟 **User Experience**: Focus on creating a seamless user experience and interface design.
+
+- 👨‍💻 **Code Quality**: Ensure code quality and organization for maintainability and readability.
+
+- 🎤👋 **Event Handling**: Properly handle video chat events like user joining, leaving, and audio/video toggling.
+
+## <a name="quick-start">🤸 Quick Start</a>
+
+Follow these steps to set up the project locally on your machine.
+
+**Prerequisites**
+
+Make sure you have the following installed on your machine:
+
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/en)
+- [npm](https://www.npmjs.com/) (Node Package Manager)
+
+**Cloning the Repository**
+
+```bash
+git clone (https://github.com/Kaleab-Selamawi/video-chat.git)
+cd video-chat
+```
+
+**Installation**
+
+Install the project dependencies using npm:
+
+```bash
+npm install
+```
+
+**Set Up Environment Variables**
+
+Create a new file named `.env` in the root of your project and add the following content:
+
+```env
+# Your Jitsi domain
+YOUR_DOMAIN=""
+# Your Meeting Room name
+DEFAULT_MEETING_ROOM_NAME=""
+```
+
+Replace the placeholder values with your domain & meeting room name.
+
+**Running the Project**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Acknowledgements
 
-## Learn More
+- [Jitsi](https://jitsi.github.io/handbook/docs/intro) for making this project possible
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[MIT](https://choosealicense.com/licenses/mit/)
