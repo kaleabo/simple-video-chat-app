@@ -2,7 +2,7 @@
 
 import React from "react";
 import { JitsiMeeting } from "@jitsi/react-sdk";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 // Define JitsiMeet component
 const JitsiMeet: React.FC<{ RoomName: string }> = ({ RoomName }) => {
