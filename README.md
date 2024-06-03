@@ -18,7 +18,7 @@ This repository contains the source code for a simple video chat application dev
 
  
  
-### 🚀 [video-chat.vercel.app](video-chat.vercel.app)
+### 🚀 [video-chat-nine-ashy.vercel.app](https://video-chat-nine-ashy.vercel.app)
 ## Features
 
 - 🎥👥 **Video Chat Rooms**: Users can create and join video chat rooms by entering a room name.
