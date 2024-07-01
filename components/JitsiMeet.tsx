@@ -1,45 +1,51 @@
 "use client";
 
 import React from "react";
-import { JitsiMeeting } from "@jitsi/react-sdk";
+import { JaaSMeeting } from "@jitsi/react-sdk";
 import { useRouter } from "next/navigation";
+import Loading from "./Loading";
 
-// Define JitsiMeet component
-const JitsiMeet: React.FC<{ RoomName: string }> = ({ RoomName }) => {
-  // JitsiMeet roomName from URL
-  const roomName = RoomName || "";
+interface JitsiMeetProps {
+  roomName: string;
+}
+
+const JitsiMeet = ({ roomName }: JitsiMeetProps) => {
   const router = useRouter();
+  const YOUR_APP_ID = process.env.NEXT_PUBLIC_JITSI_APP_ID || "";
 
+  if (!YOUR_APP_ID) {
+    console.error("Jitsi App ID is missing.");
+    return (
+      <div className="flex items-center justify-center h-screen">
+        Error: Jitsi configuration is missing.
+      </div>
+    );
+  }
   return (
-    <JitsiMeeting
-      domain={process.env.YOUR_DOMAIN}
-      roomName={roomName}
-      configOverwrite={{
-        startWithAudioMuted: true,
-        disableModeratorIndicator: true,
-        startScreenSharing: true,
-        enableEmailInStats: false,
-      }}
-      interfaceConfigOverwrite={{
-        DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
-      }}
-      userInfo={{ displayName: "", email: "" }}
-      onApiReady={(externalApi) => {
-        // Add custom event listeners to the Jitsi Meet External API
-        // Store externalApi locally to execute commands
-        externalApi.addEventListeners({
-          onUserLeft: () => {
-            // Custom function to handle user leaving the meeting
-            router.push("/");
-            // Add your logic to navigate back to the home page here
-          },
-        });
-      }}
-      getIFrameRef={(iframeRef) => {
-        // Set the height of the iframe to 100vh
-        iframeRef.style.height = "100vh";
-      }}
-    />
+    <div>
+      <JaaSMeeting
+        appId={YOUR_APP_ID}
+        roomName={roomName}
+        configOverwrite={{
+          disableThirdPartyRequests: true,
+          disableLocalVideoFlip: true,
+          disableModeratorIndicator: true,
+          backgroundAlpha: 0.5,
+          startScreenSharing: true,
+        }}
+        interfaceConfigOverwrite={{
+          VIDEO_LAYOUT_FIT: "nocrop",
+          MOBILE_APP_PROMO: false,
+          TILE_VIEW_MAX_COLUMNS: 4,
+        }}
+        spinner={Loading}
+        onReadyToClose={() => router.push("/")}
+        getIFrameRef={(iframeRef) => {
+          // Set the height of the iframe to 100vh
+          iframeRef.style.height = "100vh";
+        }}
+      />
+    </div>
   );
 };
 

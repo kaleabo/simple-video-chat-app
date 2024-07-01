@@ -81,10 +81,8 @@ npm install
 Create a new file named `.env` in the root of your project and add the following content:
 
 ```env
-# Your Jitsi domain
-YOUR_DOMAIN=""
-# Your Meeting Room name
-DEFAULT_MEETING_ROOM_NAME=""
+# Your Jitsi app id
+NEXT_PUBLIC_JITSI_APP_ID=""
 ```
 
 Replace the placeholder values with your domain & meeting room name.

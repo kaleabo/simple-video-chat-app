@@ -4,15 +4,15 @@ import JitsiMeet from "@/components/JitsiMeet";
 // Define an interface for the VideoChat component props
 interface VideoChatProps {
   params: {
-    RoomName: string;
+    roomName: string;
   };
 }
 
-const VideoChat: React.FC<VideoChatProps> = ({ params: { RoomName } }) => {
+const VideoChat: React.FC<VideoChatProps> = ({ params: { roomName } }) => {
   return (
     <div>
       {/* Render the JitsiMeet component with the specified RoomName */}
-      <JitsiMeet RoomName={RoomName} />
+      <JitsiMeet roomName={roomName} />
     </div>
   );
 };
