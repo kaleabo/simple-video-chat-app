@@ -35,7 +35,7 @@ const CreateRoomForm: React.FC = () => {
         {...register("roomName")}
         placeholder="Enter room name"
         className={cn(
-          "px-4 py-3 rounded-lg border border-gray-300  dark bg-card focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+          "px-4 py-3 rounded-lg border border-gray-300  dark:border-gray-700 bg-card dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
           errors.roomName
             ? "focus:ring-red-400 focus:border-red-400 focus:placeholder:text-red-500"
             : ""
