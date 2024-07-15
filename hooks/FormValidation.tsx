@@ -1,15 +1,28 @@
 "use client";
 
 import { z } from "zod";
+import { customAlphabet } from "nanoid";
 
-// Define the validation schema for the room name
+// Create a custom nanoid alphabet for room name suffix
+const nanoid = customAlphabet(
+  "23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz",
+  6
+);
+
+// Define the validation schema for the room creation form
 export const RoomFormSchema = z.object({
   roomName: z
     .string()
-    .nonempty("Room name is required") // Error message if the field is empty
-    .min(10, "Room name must be at least 10 characters") // Error message for minimum length
-    .regex(/^[a-zA-Z1-9-_ ]+$/, {
+    .trim()
+    .min(3, "Room name must be at least 3 characters")
+    .max(20, "Room name must not exceed 20 characters")
+    .regex(/^[a-zA-Z0-9-_]+$/, {
       message:
-        "Room name can only contain letters (a-z, A-Z), numbers (1-9), hyphens, and underscores",
-    }), // Regular expression validation
+        "Room name can only contain letters, numbers, hyphens, and underscores",
+    }),
 });
+
+// Function to generate the full room name
+export const generateRoomName = (prefix: string) => {
+  return `${prefix}-${nanoid()}`;
+};
