@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { generateRoomName, RoomFormSchema } from "@/hooks/FormValidation";
+import { RoomFormSchema } from "@/hooks/FormValidation";
 
 // Define the type of form data based on the RoomFormSchema
 type FormData = z.infer<typeof RoomFormSchema>;
@@ -25,8 +25,7 @@ const CreateRoomForm: React.FC = () => {
   // Handle form submission
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
-    const fullRoomName = generateRoomName(data.roomName);
-    router.push(`/${process.env.NEXT_PUBLIC_JITSI_APP_ID}/${fullRoomName}`);
+    router.push(`/${process.env.NEXT_PUBLIC_JITSI_APP_ID}/${data.roomName}`);
   };
 
   return (
@@ -35,7 +34,7 @@ const CreateRoomForm: React.FC = () => {
         {...register("roomName")}
         placeholder="Enter room name"
         className={cn(
-          "px-4 py-3 rounded-lg border border-gray-300  dark:border-gray-700 bg-card dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
+          "px-4 py-3 rounded-lg border border-gray-700 bg-card text-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500",
           errors.roomName
             ? "focus:ring-red-400 focus:border-red-400 focus:placeholder:text-red-500"
             : ""
