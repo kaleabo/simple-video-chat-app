@@ -64,8 +64,8 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone https://github.com/Kaleab-Selamawi/video-chat.git
-cd video-chat
+git clone https://github.com/Kaleab-Selamawi/simple-video-chat-app.git
+cd simple-video-chat-app
 ```
 
 **Installation**
